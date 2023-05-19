@@ -30,5 +30,15 @@ namespace Practice__Virtual__Overriding__and_New
 		{
 			return base.ToString() + $" Overdraft fee is {_overdraftFee}";
 		}
+
+		public override bool Deposit(double amount)
+		{
+			if (amount > 0)
+			{
+				_balance += amount;
+				return true;
+			}
+			return false;
+		}
 	}
 }
